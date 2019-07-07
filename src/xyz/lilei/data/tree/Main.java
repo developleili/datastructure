@@ -11,22 +11,13 @@ import java.util.Random;
  **/
 public class Main {
     public static void main(String[] args) {
-        BST<Integer> bst = new BST<>();
-        for (int i = 0; i < 100; i++) {
-            bst.add(new Random().nextInt(1000));
-        }
+        Integer[] nums = {-2, 0, 3, -5, 2, -1};
+        SegmentTree<Integer> segmentTree = new SegmentTree<>(nums, (a, b) -> a + b);
 
-        // 前序遍历
-        bst.perOrder();
-        System.out.println();
 
-        // 中序遍历
-        bst.inOrder();
-        System.out.println();
-
-        // 后序遍历
-        bst.postOrder();
-        System.out.println();
-        System.out.println(bst.toString());
+        System.out.println(segmentTree.query(2, 5));
+        segmentTree.set(2, 10);
+        System.out.println(segmentTree.query(2, 5));
+        System.out.println(segmentTree.toString());
     }
 }

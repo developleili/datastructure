@@ -1,7 +1,5 @@
 package xyz.lilei.data.map;
 
-import xyz.lilei.data.tree.BST;
-
 import java.util.Random;
 
 /**
@@ -24,6 +22,10 @@ public class Main {
         System.out.println(map.remove(2));
         map.postOrder();
         System.out.println();
-        System.out.println("size " + map.getSize());
+        System.out.println("size : " + map.getSize());
+
+
     }
 }
+
+
